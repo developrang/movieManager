@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<title>Movie Manager</title>
+<link href="css/bootstrap.min.css" rel="styleSheet">
+<link href="css/movieManagerStyle.css" rel="styleSheet">
+</head>
+<body>
+<div class="conianer">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Movie Manager</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="createMovie.html">Create Movie<span class="sr-only">(current)</span></a></li>
+        <li><a href="updateMovie.html">Update Movie</a></li>
+        <li><a href="deleteMovie.html">Delete Movie</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+</div>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-10">
+        	<h1>Delete Movie Instance</h1>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+	<div class="row" style="background:#F90; margin-bottom:20px;">
+    	<div class="col-lg-10">        	
+        </div>
+    </div>
+</div>
+
+<div class="container">
+	<div class="row">
+    	<div class="col-lg-10">
+        	<p class="lead">Delete movie from the database</p>
+        </div>
+    </div>
+    <div class="row">
+    	<div class="col-lg-8">
+        	<form name="movie">
+              <div class="form-group">
+                <label for="SelectMovie">Select Movie</label>
+                <select name='selectMovie' class="form-control">
+                	<option value=''>Select Movie</option>
+                </select>
+                
+              </div>	
+            
+              
+              <button type="submit" class="btn btn-default" name='commit'>Delete Movie</button>
+            </form>
+        </div>
+    </div>
+    
+</div>
+
+<script src="app/ctrl/initialize.js"></script>
+<script src="app/model/movie.js"></script>
+<script src="app/view/deleteMovie.js"></script>
+<script>
+	window.onload = function(){
+		mm.view.deleteMovie.setupUserInterface();
+	}
+	window.onbeforeunload = function(){
+		alert("On Unload Event");
+		Movie.saveAll();	
+	}
+</script>
+</body>
+</html>
+
