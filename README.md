@@ -1,2 +1,2 @@
-# Feaure Branch 
+# Feature Branch 
 movieManager
